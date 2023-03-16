@@ -1,5 +1,6 @@
 # common
 lxml>=4.9.2
+beautifulsoup4>=4.11.2
 # aiohttp
 aiohttp>=3.8.4
 # selenium_t
