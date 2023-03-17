@@ -6,6 +6,10 @@ from bs4 import BeautifulSoup
 
 url = 'http://cip.cc'
 
+"""
+Regexp
+"""
+
 
 def cip_re():
     r = utils.do(url, fake_ua=True)
@@ -16,6 +20,11 @@ def cip_re():
             print(row)
         if re.search('^数据三', row):
             print(row, '\n')
+
+
+"""
+lxml
+"""
 
 
 def cip_xpath():
@@ -32,10 +41,15 @@ def cip_by_ip(ip):
     print(x_pre)
 
 
+"""
+BeautifulSoup
+"""
+
+
 def cip_by_bs():
     r = utils.do(url, fake_ua=True)
-    dom = BeautifulSoup(r, features='html.parser')
-    print(dom.p)
+    soup = BeautifulSoup(r, features='lxml')
+    print(soup.pre.string)
 
 
 if __name__ == '__main__':
